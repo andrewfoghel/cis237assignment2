@@ -27,8 +27,8 @@ namespace cis237assignment2
             /// Note: You may want to make a smaller version to test and debug with.
             /// You don't have to, but it might make your life easier.
             /// </summary>
-            char[,] maze1 = 
-            { { '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#' },
+            char[,] maze1 =
+          { { '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#' },
             { '#', '.', '.', '.', '#', '.', '.', '.', '.', '.', '.', '#' },
             { '#', '.', '#', '.', '#', '.', '#', '#', '#', '#', '.', '#' },
             { '#', '#', '#', '.', '#', '.', '.', '.', '.', '#', '.', '#' },
@@ -78,6 +78,16 @@ namespace cis237assignment2
         static char[,] transposeMaze(char[,] mazeToTranspose)
         {
             //Write code her to create a transposed maze.
+            char[,] newMaze = new char[mazeToTranspose.GetLength(1), mazeToTranspose.GetLength(0)];
+            for (int i = 0; i < mazeToTranspose.GetLength(0); i++)
+            {
+                for (int j = 0; j < mazeToTranspose.GetLength(1); j++)
+                {
+                    newMaze[j, i] = mazeToTranspose[i, j];
+
+                }
+            }
+            return newMaze;
             return new char[1, 1];
         }
     }
